@@ -4,13 +4,13 @@ let secondNum;
 
 function operate(firstNum, operator, secondNum) {
     if (operator === '+') {
-        add(firstNum, secondNum);
+        return add(firstNum, secondNum);
     } else if (operator === '-') {
-        subtract(firstNum, secondNum);
+        return subtract(firstNum, secondNum);
     } else if (operator === '*') {
-        multiply(firstNum, secondNum);
+        return multiply(firstNum, secondNum);
     } else if (operator === '/') {
-        divide(firstNum, secondNum);
+        return divide(firstNum, secondNum);
     }
 }
 
