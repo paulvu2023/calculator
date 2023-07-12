@@ -5,16 +5,27 @@ let secondNum;
 const display = document.querySelector('.display');
 const numbers = document.querySelectorAll('.num');
 const clear = document.querySelector('#clear');
+const dlete = document.querySelector('#delete');
+const buttons = document.querySelectorAll('button');
 
 clear.addEventListener('click', () => {
     display.textContent = '';
 });
+
+dlete.addEventListener('click', () => {
+    display.textContent = display.textContent.slice(0,-1);
+})
 
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
         display.textContent += number.textContent;
     });
 });
+
+
+function lookForOperator() {
+
+}
 
 function operate(firstNum, operator, secondNum) {
     if (operator === '+') {
