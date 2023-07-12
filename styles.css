@@ -17,8 +17,8 @@ html, body, .container {
     flex: 1;
     flex-direction: column;
     align-items: center;
-    max-width: 25vw;
-    height: 35vw;
+    max-width: 30vw;
+    height: 45vw;
     background-color: black;
     border-radius: 50px;
 }
@@ -26,10 +26,13 @@ html, body, .container {
 .display {
     margin-top: 2vw;
     background-color: gray;
-    width: 20vw;
+    width: 25vw;
     height: 10vw;
 }
 
 .row {
-    
+    background-color: white;
+    width: 25vw;
+    height: 5.2vw;
+    margin: .5vw;
 }
