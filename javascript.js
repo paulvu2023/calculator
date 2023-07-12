@@ -2,6 +2,17 @@ let firstNum;
 let operator;
 let secondNum;  
 
+const display = document.querySelector('.display');
+const numbers = document.querySelectorAll('.num');
+
+numbers.forEach((number) => {
+
+    number.addEventListener('click', () => {
+        alert(number.textContent);
+        display.textContent += number.textContent;
+    }); //try to make buttons actually display something
+});
+
 function operate(firstNum, operator, secondNum) {
     if (operator === '+') {
         return add(firstNum, secondNum);
