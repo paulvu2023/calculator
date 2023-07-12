@@ -23,6 +23,7 @@ html, body, .container {
     height: 45vw;
     background-color: black;
     border-radius: 50px;
+    padding-bottom: 2vw;
 }
 
 .display {
@@ -37,7 +38,6 @@ html, body, .container {
 .row {
     display: flex;
     flex: 1;
-    background-color: white;
     width: 25vw;
     height: 5.15vw;
     margin: .5vw;
@@ -47,7 +47,7 @@ html, body, .container {
 #clear, #delete {
     width: 9vw;
     height: 5.5vw;
-    border-radius: 70%;
+    border-radius: 50%;
     font-size: 2vw;
     background-color: rgb(180, 180, 180);
     color: black;
