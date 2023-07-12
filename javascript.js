@@ -7,6 +7,7 @@ const numbers = document.querySelectorAll('.num');
 const clear = document.querySelector('#clear');
 const dlete = document.querySelector('#delete');
 const buttons = document.querySelectorAll('button');
+const operators = document.querySelectorAll('.operators');
 
 clear.addEventListener('click', () => {
     display.textContent = '';
@@ -21,12 +22,23 @@ numbers.forEach((number) => {
     number.addEventListener('click', () => {
         display.textContent += number.textContent;
     });
-    
+
 });
 
+operators.forEach((operator) => {
 
-function lookForOperator() {
+    operator.addEventListener('click', () => {
+        if (operator.textContent === "=") {
+            calculate();
+        } else {
+            display.textContent += operator.textContent;
+        }
+    });
 
+});
+
+function calculate(){
+    
 }
 
 function operate(firstNum, operator, secondNum) {
