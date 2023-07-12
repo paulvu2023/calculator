@@ -47,7 +47,7 @@ html, body, .container {
 #clear, #delete {
     width: 9vw;
     height: 5.5vw;
-    border-radius: 50%;
+    border-radius: 50px;
     font-size: 2vw;
     background-color: rgb(180, 180, 180);
     color: black;
