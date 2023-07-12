@@ -17,9 +17,11 @@ dlete.addEventListener('click', () => {
 })
 
 numbers.forEach((number) => {
+
     number.addEventListener('click', () => {
         display.textContent += number.textContent;
     });
+    
 });
 
 
@@ -28,6 +30,7 @@ function lookForOperator() {
 }
 
 function operate(firstNum, operator, secondNum) {
+    //check which operator was inputted
     if (operator === '+') {
         return add(firstNum, secondNum);
     } else if (operator === '-') {
