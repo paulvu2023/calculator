@@ -42,9 +42,12 @@ html, body, .container {
     justify-content: end;
     align-items: end;
     margin-right: 1vw;
-    margin-left: 1vw;
+    margin-right: 1vw;
     margin-bottom: 2vw;
     font-size: 5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .row {
