@@ -42,25 +42,24 @@ function checkIfOperatorInputted(){
     let divisions = display.textContent.match(/÷/g);
     let multiplications = display.textContent.match(/×/g);
     let additions = display.textContent.match(/\+/g);
-    let subtractions = display.textContent.match(/-/g);
+    let subtractions = display.textContent.match(/−/g);
+    let operatorCount = 0;
     if (divisions){
-        if (divisions.length >= 2) {
-            return true;
-        }
-    } else if (multiplications) {
-        if (multiplications.length >= 2) {
-            return true;
-        }
-    } else if (additions) {
-        if (additions.length >= 2) {
-            return true;
-        }
-    } else if (subtractions) {
-        if (subtractions.length >= 2) {
-            return true;
-        }
+        operatorCount += divisions.length;
+    }
+    if (multiplications) {
+        operatorCount += multiplications.length;
+    }
+    if (additions) {
+        operatorCount += additions.length;
+    }
+    if (subtractions) {
+        operatorCount += subtractions.length;
     }
     if (display.textContent.includes('=')) {
+        return true;
+    }
+    if (operatorCount >= 2) {
         return true;
     }
     return false;
