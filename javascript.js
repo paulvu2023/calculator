@@ -69,13 +69,13 @@ function checkIfOperatorInputted(){
 function calculate(){
     let operator;
     if (display.textContent.indexOf('÷') >= 0) {
-        operator = '/';
+        operator = '÷';
     } else if (display.textContent.indexOf('×') >= 0) {
-        operator = '*';
+        operator = '×';
     } else if (display.textContent.indexOf('+') >= 0) {
         operator = '+';
     } else if (display.textContent.indexOf('−') >= 0) {
-        operator = '-';
+        operator = '−';
     }
 
     firstNum = display.textContent.slice(0, display.textContent.indexOf(operator));
@@ -88,11 +88,11 @@ function operate(firstNum, operator, secondNum) {
     //check which operator was inputted
     if (operator === '+') {
         return add(firstNum, secondNum);
-    } else if (operator === '-') {
+    } else if (operator === '−') {
         return subtract(firstNum, secondNum);
-    } else if (operator === '*') {
+    } else if (operator === '×') {
         return multiply(firstNum, secondNum);
-    } else if (operator === '/') {
+    } else if (operator === '÷') {
         return divide(firstNum, secondNum);
     }
 }
@@ -102,13 +102,13 @@ function add(x, y) {
 }
 
 function subtract(x, y) {
-    return x - y;
+    return parseInt(x) - parseInt(y);
 }
     
 function multiply(x, y){
-    return x * y;
+    return parseInt(x) * parseInt(y);
 }
 
 function divide(x, y) {
-    return x / y;
+    return parseInt(x) / parseInt(y);
 }
