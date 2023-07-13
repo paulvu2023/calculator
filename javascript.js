@@ -37,8 +37,7 @@ operators.forEach((operator) => {
         if (checkIfOperatorInputted()) {
             let additionalOperator = display.textContent.slice(-1);
             display.textContent = display.textContent.slice(0,-1);
-            console.log(additionalOperator);
-            calculate();
+            calculate(additionalOperator);
         }
     });
 
@@ -72,7 +71,7 @@ function checkIfOperatorInputted(){
     return false;
 }
 
-function calculate(){
+function calculate(additionalOperator){
     let operator;
     if (display.textContent.indexOf('÷') >= 0) {
         operator = '÷';
@@ -89,6 +88,9 @@ function calculate(){
     firstNum = operate(firstNum, operator, secondNum);
     if (operator != undefined) {
         display.textContent = firstNum;
+        if (additionalOperator != '=') {
+            display.textContent += additionalOperator;
+        }
     } else {
         // Example: Makes '1 =' show 1 instead of showing '1 =' 
         display.textContent = display.textContent.slice(0,-1);
