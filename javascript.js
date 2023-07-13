@@ -43,7 +43,6 @@ function checkIfOperatorInputted(){
     let multiplications = display.textContent.match(/×/g);
     let additions = display.textContent.match(/\+/g);
     let subtractions = display.textContent.match(/-/g);
-    let equals = display.textContent.match(/=/g);
     if (divisions){
         if (divisions.length >= 2) {
             return true;
@@ -60,7 +59,8 @@ function checkIfOperatorInputted(){
         if (subtractions.length >= 2) {
             return true;
         }
-    } else if (equals) {
+    }
+    if (display.textContent.includes('=')) {
         return true;
     }
     return false;
@@ -69,12 +69,12 @@ function checkIfOperatorInputted(){
 function calculate(){
     let operator;
     if (display.textContent.indexOf('÷') >= 0) {
-        operator = '÷';
+        operator = '/';
     } else if (display.textContent.indexOf('×') >= 0) {
-        operator = '×';
+        operator = '*';
     } else if (display.textContent.indexOf('+') >= 0) {
         operator = '+';
-    } else if (display.textContent.indexOf('-') >= 0) {
+    } else if (display.textContent.indexOf('−') >= 0) {
         operator = '-';
     }
 
