@@ -31,7 +31,6 @@ operators.forEach((operator) => {
         display.textContent += operator.textContent;
         if (checkIfOperatorInputted()) {
             calculate();
-            console.log("ooga booga")
         }
     });
 
@@ -80,7 +79,11 @@ function calculate(){
     firstNum = display.textContent.slice(0, display.textContent.indexOf(operator));
     secondNum = display.textContent.slice(display.textContent.indexOf(operator)+1);
     firstNum = operate(firstNum, operator, secondNum);
-    display.textContent = firstNum;
+    if (operator != undefined) {
+        display.textContent = firstNum;
+    } else {
+        display.textContent = display.textContent.slice(0,-1);
+    }
 }
 
 function operate(firstNum, operator, secondNum) {
@@ -109,5 +112,9 @@ function multiply(x, y){
 }
 
 function divide(x, y) {
-    return parseInt(x) / parseInt(y);
+    let quotient = parseInt(x) / parseInt(y);
+    if (quotient == Infinity) {
+        return("My Money");
+    }
+    return quotient;
 }
