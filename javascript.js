@@ -105,15 +105,15 @@ function operate(firstNum, operator, secondNum) {
 }
 
 function add(x, y) {
-    return parseInt(x) + parseInt(y);
+    return parseFloat(x) + parseFloat(y);
 }
 
 function subtract(x, y) {
-    return parseInt(x) - parseInt(y);
+    return parseFloat(x) - parseFloat(y);
 }
     
 function multiply(x, y){
-    return parseInt(x) * parseInt(y);
+    return 1 * (parseInt(x) * parseInt(y)).toFixed(4);
 }
 
 function divide(x, y) {
