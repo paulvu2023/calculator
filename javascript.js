@@ -35,6 +35,9 @@ operators.forEach((operator) => {
     operator.addEventListener('click', () => {
         display.textContent += operator.textContent;
         if (checkIfOperatorInputted()) {
+            let additionalOperator = display.textContent.slice(-1);
+            display.textContent = display.textContent.slice(0,-1);
+            console.log(additionalOperator);
             calculate();
         }
     });
@@ -87,6 +90,7 @@ function calculate(){
     if (operator != undefined) {
         display.textContent = firstNum;
     } else {
+        // Example: Makes '1 =' show 1 instead of showing '1 =' 
         display.textContent = display.textContent.slice(0,-1);
     }
 }
