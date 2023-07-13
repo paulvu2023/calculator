@@ -29,31 +29,59 @@ operators.forEach((operator) => {
 
     operator.addEventListener('click', () => {
         display.textContent += operator.textContent;
-        checkAndCalculate();
+        if (checkIfOperatorInputted()) {
+            calculate();
+            console.log("ooga booga")
+        }
     });
 
 });
 
-function check(){
-    let divisions = display.textContent.match(/÷/g).length;
-    let multiplications = display.textContent.match(/×/g).length;
-    let additions = display.textContent.match(/\+/g).length;
-    let subtractions = display.textContent.match(/-/g).length;
-    let equals = display.textContent.match(/=/g).length;
-    if (divisions >= 1 || multiplications >= 1 || additions >= 1
-    || subtractions >= 1 || equals >= 1) {
-            return false;
-    } else {
+function checkIfOperatorInputted(){
+    // Check an operator is already in the display
+    let divisions = display.textContent.match(/÷/g);
+    let multiplications = display.textContent.match(/×/g);
+    let additions = display.textContent.match(/\+/g);
+    let subtractions = display.textContent.match(/-/g);
+    let equals = display.textContent.match(/=/g);
+    if (divisions){
+        if (divisions.length >= 2) {
+            return true;
+        }
+    } else if (multiplications) {
+        if (multiplications.length >= 2) {
+            return true;
+        }
+    } else if (additions) {
+        if (additions.length >= 2) {
+            return true;
+        }
+    } else if (subtractions) {
+        if (subtractions.length >= 2) {
+            return true;
+        }
+    } else if (equals) {
         return true;
     }
+    return false;
 }
 
 function calculate(){
-    // Check how many of each operator are in the display
-    let operatorIndex;
-    operatorIndex = display.textContent.indexOf('÷');
-    firstNum = display.textContent.slice(0, operatorIndex);
-    secondNum = display.textContent.slice(operatorIndex+1);
+    let operator;
+    if (display.textContent.indexOf('÷') >= 0) {
+        operator = '÷';
+    } else if (display.textContent.indexOf('×') >= 0) {
+        operator = '×';
+    } else if (display.textContent.indexOf('+') >= 0) {
+        operator = '+';
+    } else if (display.textContent.indexOf('-') >= 0) {
+        operator = '-';
+    }
+
+    firstNum = display.textContent.slice(0, display.textContent.indexOf(operator));
+    secondNum = display.textContent.slice(display.textContent.indexOf(operator)+1);
+    firstNum = operate(firstNum, operator, secondNum);
+    display.textContent = firstNum;
 }
 
 function operate(firstNum, operator, secondNum) {
