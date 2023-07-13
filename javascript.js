@@ -8,6 +8,11 @@ const clear = document.querySelector('#clear');
 const dlete = document.querySelector('#delete');
 const buttons = document.querySelectorAll('button');
 const operators = document.querySelectorAll('.operators');
+const paulButton = document.querySelector('#name');
+
+paulButton.addEventListener('click', () => {
+    window.open('https://github.com/paulvu2023', "_blank");
+});
 
 clear.addEventListener('click', () => {
     display.textContent = '';
